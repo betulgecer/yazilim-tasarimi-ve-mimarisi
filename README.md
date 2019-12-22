@@ -33,7 +33,10 @@ Faydaları Nedir?
 Observer Design Pattern’de;  
 Subject: Takip edilecek olan nesnemiz.  
 Observer: Abstract gözlemci sınıfımız. Soyutlamanın sebebi ise birden fazla gözlemci tarafından takip edilebilmesini sağlamak.  
-ConcreteObserver: Gerçek takip eden nesnemiz.  
+ConcreteObserver: Gerçek takip eden nesnemiz.
+
+
+![Imega of Class](https://github.com/betulgecer/yazilim-tasarimi-ve-mimarisi/blob/master/observerUML.png) 
 
 Kodlar
 
