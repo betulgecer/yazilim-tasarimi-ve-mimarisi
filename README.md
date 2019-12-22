@@ -20,7 +20,7 @@ Observer Pattern Ne Zaman Kullanılır?
  -Eğer bir nesnenin diğer nesnelerin hangi nesneler olduğundan habersiz, onları haberdar etme ihtiyacı varsa ve bu nesneyle diğer nesneleri birbirine kuvvetli bağlarla bağlamak istemiyorsanız.
 
 
-###Observer Pattern Nerelerde Kullanılır?   
+Observer Pattern Nerelerde Kullanılır?   
 
 Örneğin bir alışveriş sitesinde bir ürüne indirim yapıldığında kullanıcılarınıza e-mail ile haber verilir iken bu kalıp kullanılabilir. Ya da en basitinden facebook da bir gruba üyesiniz grupta bildirimleri açtığınızda size (ve daha birçok kişiye) gelecek olan bildirim bu yapı ile olabilir.
 
