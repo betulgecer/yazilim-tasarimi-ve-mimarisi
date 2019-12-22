@@ -209,5 +209,5 @@ public class WeatherStation {
 Test sınıfı. Dikkat edersek, observer sınıflarından nesne yaratılırken, parametre olarak somut Subject sınıfı kullanıldı.
 
 
-
+Genel olarak Behavioral (davranışsal) tasarım kalıplardan olan observer pattern sık kullanılır. One to many ilişkili birden fazla nesneden oluşur. Bir nesne değiştiği zaman, ona bağlı diğer nesnelerde otomatik olarak değişmektedir. Olay (event) bazlı değişimler olmaktadır.Gözlemci tasarım deseni gönderim tabanlı bildirim gerektiren tüm senaryolar için uygundur. Bu model, bir sağlayıcıyı ( Konu veya observableolarak da bilinir) ve sıfır, bir veya daha fazla gözlemcileri tanımlar. Gözlemcilerin sağlayıcıya kaydoldu ve önceden tanımlanmış bir koşul, olay veya durum değişikliği gerçekleştiğinde sağlayıcı, yöntemlerinden birini çağırarak tüm gözlemcilerin 'ı otomatik olarak bilgilendirir. Bu yöntem çağrısında sağlayıcı, güncel durum bilgilerini observers 'a de verebilir. 
 
