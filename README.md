@@ -1,5 +1,5 @@
 # yazilim-tasarimi-ve-mimarisi
-##Observe
+## Observe Tasarım Deseni
 Observer tasarım deseni behavioral (davranışsal) grubuna aittir.  
 
 
@@ -13,27 +13,27 @@ Observer Tasarım Desenindeki Amaç:
 Tasarlanmış olan sistem içerisinde, değişimini izlemek istediğimiz bir değer için kullanılır.
 
 
-Observer Pattern Ne Zaman Kullanılır?
+Observer Pattern Ne Zaman Kullanılır?  
 
--Bir nesneyi değiştirdiğinizde birden fazla nesnenin değişmesi gerekliyse ve kaç tane nesnenin değişeceğinden habersizseniz.
--Eğer bir soyutlamanın birbirine bağlı iki görünümü varsa ve bu sınıfları birden fazla sınıfa ayırmak sonradan kullanımlarını kolaylaştırıyorsa.
+-Bir nesneyi değiştirdiğinizde birden fazla nesnenin değişmesi gerekliyse ve kaç tane nesnenin değişeceğinden habersizseniz.  
+-Eğer bir soyutlamanın birbirine bağlı iki görünümü varsa ve bu sınıfları birden fazla sınıfa ayırmak sonradan kullanımlarını kolaylaştırıyorsa.  
  -Eğer bir nesnenin diğer nesnelerin hangi nesneler olduğundan habersiz, onları haberdar etme ihtiyacı varsa ve bu nesneyle diğer nesneleri birbirine kuvvetli bağlarla bağlamak istemiyorsanız.
 
 
- Observer Pattern Nerelerde Kullanılır? 
+###Observer Pattern Nerelerde Kullanılır?   
 
 Örneğin bir alışveriş sitesinde bir ürüne indirim yapıldığında kullanıcılarınıza e-mail ile haber verilir iken bu kalıp kullanılabilir. Ya da en basitinden facebook da bir gruba üyesiniz grupta bildirimleri açtığınızda size (ve daha birçok kişiye) gelecek olan bildirim bu yapı ile olabilir.
 
 Faydaları Nedir?
 
-1. Loosely-coupled uygulamalar yapmayı sağlar. Subject ile Observer birbirleriyle loosely-coupled'tır.
-2. Bir nesnenin birden çok nesneyi otomatik olarak etkilemesini istiyorsak bu tasarım desenini kullanabiliriz. Örneğin, uygulamamızda A ve B kısımları olsun. A kısmında anlık sıcaklığın gösterildiğini varsayalım. B kısmı ise sıcaklık 20 derecenin altında olduğu zaman yeşil bir ışık göstersin. B kısmının sıcaklık değişikliklerine tepki göstermesi için kendisini A kısmının dinleyicisi(listener) olarak kaydetmesi gerekir. Kaydettikten sonra her bir sıcaklık değişimini izleyerek yeşil ışık gösterip göstermeyeceğini otomatik olarak kontrol eder.
+1. Loosely-coupled uygulamalar yapmayı sağlar. Subject ile Observer birbirleriyle loosely-coupled'tır.  
+2. Bir nesnenin birden çok nesneyi otomatik olarak etkilemesini istiyorsak bu tasarım desenini kullanabiliriz. Örneğin, uygulamamızda A ve B kısımları olsun. A kısmında anlık sıcaklığın gösterildiğini varsayalım. B kısmı ise sıcaklık 20 derecenin altında olduğu zaman yeşil bir ışık göstersin. B kısmının sıcaklık değişikliklerine tepki göstermesi için kendisini A kısmının dinleyicisi(listener) olarak kaydetmesi gerekir. Kaydettikten sonra her bir sıcaklık değişimini izleyerek yeşil ışık gösterip göstermeyeceğini otomatik olarak kontrol eder.  
 
 
-Observer Design Pattern’de;
-Subject: Takip edilecek olan nesnemiz.
-Observer: Abstract gözlemci sınıfımız. Soyutlamanın sebebi ise birden fazla gözlemci tarafından takip edilebilmesini sağlamak.
-ConcreteObserver: Gerçek takip eden nesnemiz.
+Observer Design Pattern’de;  
+Subject: Takip edilecek olan nesnemiz.  
+Observer: Abstract gözlemci sınıfımız. Soyutlamanın sebebi ise birden fazla gözlemci tarafından takip edilebilmesini sağlamak.  
+ConcreteObserver: Gerçek takip eden nesnemiz.  
 
 Kodlar
 
