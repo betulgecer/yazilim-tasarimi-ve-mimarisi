@@ -244,12 +244,6 @@ Tüm decorator classları birbirinden bağımsızdır.
 Decorator classları kendi arasında combine edilip eşleştirilebilir.
 
 
-Örnek Kullanım Alanları
-
-1. java.io.InputStream, OutputStream, Reader ve Writer sınıflarının tüm alt sınıflarında kullanılır.
-2. java.util.Collections sınıfı ve checkedXXX(), synchronizedXXX(), unmodifiableXXX() metodlarında kullanılır.
-3. javax.servlet.http.HttpServletRequestWrapper ve HttpServletResponseWrapper sınıflarında kullanılır.
-
 
 ![Imega of Class](https://github.com/betulgecer/yazilim-tasarimi-ve-mimarisi/blob/master/classdiagramdecorator1.png)
 
@@ -258,7 +252,7 @@ Kodlar
 
 Dekore edilecek sınıf
 
-```java
+```c#
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -286,7 +280,7 @@ java
  
  Kendisine gönderilen SadePizza nesnesini dekore ederek pizzayı mantarlı pizza haline getiririz.
  
- ```java
+ ```c#
  class MantarliPizza : Decorator
     {
         public MantarliPizza(Pizza pz)
@@ -305,7 +299,7 @@ java
    ```
    
  Kendisine gönderilen SadePizza nesnesini dekore ederek pizzayı kıymalı pizza haline getiririz.
- ```java
+ ```c#
  class KiymaliPizza : Decorator
     {
         public KiymaliPizza(Pizza pz)
@@ -325,7 +319,7 @@ java
 
 Kendisine gönderilen SadePizza nesnesini dekore ederek pizzayı kuş başı etli pizza haline getiririz.
 
-```java
+```c#
 class KusBasiEtliPizza : Decorator
     {
         public KusBasiEtliPizza(Pizza pz)
@@ -342,6 +336,52 @@ class KusBasiEtliPizza : Decorator
         }
     }
 }
+```
+```c#    
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace DecoratorPattern
+{
+    class Client
+    {
+        public static void Main(String []args)
+        {
+            SadePizza safPizza = new SadePizza();
+            Console.WriteLine(safPizza.ToString());
+            Console.WriteLine(safPizza.PizzaFiyati());
+            Console.WriteLine();
+
+            MantarliPizza mp = new MantarliPizza(safPizza);
+            Console.WriteLine(mp.ToString());
+            Console.WriteLine(mp.PizzaFiyati());
+            Console.WriteLine();
+
+            KiymaliPizza kp = new KiymaliPizza(safPizza);
+            Console.WriteLine(kp.ToString());
+            Console.WriteLine(kp.PizzaFiyati());
+            Console.WriteLine();
+
+            KusBasiEtliPizza kbep = new KusBasiEtliPizza(safPizza);
+            Console.WriteLine(kbep.ToString());
+            Console.WriteLine(kbep.PizzaFiyati());
+            Console.WriteLine();
+
+            //Burda dikkat edilmesi gereken nokta
+            //kıymalı mantarlı pizza yapılırken saf pizza değil
+            //mantarlı pizza nesnesi gönderilmektedir.
+            KiymaliPizza kiymaliMantarliPizza = new KiymaliPizza(mp);
+            Console.WriteLine(kiymaliMantarliPizza.ToString());
+            Console.WriteLine(kiymaliMantarliPizza.PizzaFiyati());
+            Console.ReadKey();
+        }
+    }
+}
+
+
 ```
 
 Sonuç
