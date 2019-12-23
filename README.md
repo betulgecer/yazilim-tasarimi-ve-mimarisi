@@ -252,7 +252,9 @@ Decorator patternin ana oyuncuları
 
 Component class : Üzerine dinamik olarak özellik ve davranış eklenecek olan nesnenin classı.
 Decorator class : Dinamik olarak özelliğin ve davranışın eklendiği class.
-IComponent  : Component ve Decorator classın türediği interface.
+IComponent  : Component ve Decorator classın türediği interface.  
+
+![Imega of Class](https://github.com/betulgecer/yazilim-tasarimi-ve-mimarisi/blob/master/classdiagramdecorator1.png)
 
 
 
