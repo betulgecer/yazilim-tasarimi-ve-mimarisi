@@ -251,12 +251,6 @@ Decorator classları kendi arasında combine edilip eşleştirilebilir.
 3. javax.servlet.http.HttpServletRequestWrapper ve HttpServletResponseWrapper sınıflarında kullanılır.
 
 
-Decorator patternin ana oyuncuları
-
-Component class : Üzerine dinamik olarak özellik ve davranış eklenecek olan nesnenin classı.
-Decorator class : Dinamik olarak özelliğin ve davranışın eklendiği class.
-IComponent  : Component ve Decorator classın türediği interface.  
-
 ![Imega of Class](https://github.com/betulgecer/yazilim-tasarimi-ve-mimarisi/blob/master/classdiagramdecorator1.png)
 
 
@@ -349,6 +343,8 @@ class KusBasiEtliPizza : Decorator
     }
 }
 ```
+
+Sonuç
 
 Genel olarak bu desen, bir nesneye alt sınıflar yaratılmaksızın, dinamik olarak yeni özellikler kazandırmak için kullanılır.
 Decoractor tasarım deseni; yapıya yeni metot eklenmesini yapının arayüzünü uygulayan bir decorator nesnesi tanımlanarak yapar. İçinde uyguladığı arayüz tipinde bir referans barındırır ve kendisine verilen bu nesne üzerinde yeni eklenecek olan metotları barındırır. Kullanımı oldukça basittir. 
