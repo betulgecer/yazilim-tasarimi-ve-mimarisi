@@ -370,9 +370,6 @@ namespace DecoratorPattern
             Console.WriteLine(kbep.PizzaFiyati());
             Console.WriteLine();
 
-            //Burda dikkat edilmesi gereken nokta
-            //kıymalı mantarlı pizza yapılırken saf pizza değil
-            //mantarlı pizza nesnesi gönderilmektedir.
             KiymaliPizza kiymaliMantarliPizza = new KiymaliPizza(mp);
             Console.WriteLine(kiymaliMantarliPizza.ToString());
             Console.WriteLine(kiymaliMantarliPizza.PizzaFiyati());
