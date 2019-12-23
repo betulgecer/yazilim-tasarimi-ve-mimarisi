@@ -1,5 +1,5 @@
 #  Yazilim-Tasarimi-Ve-Mimarisi
-## Observe Tasarım Deseni
+## Observer Tasarım Deseni
 Observer tasarım deseni behavioral (davranışsal) grubuna aittir.  
 
 
