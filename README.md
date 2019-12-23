@@ -1,4 +1,4 @@
-# yazilim-tasarimi-ve-mimarisi
+#  Yazilim-Tasarimi-Ve-Mimarisi
 ## Observe Tasarım Deseni
 Observer tasarım deseni behavioral (davranışsal) grubuna aittir.  
 
@@ -23,6 +23,7 @@ Observer Tasarım Deseni Ne Zaman Kullanılır?
 Observer Tasarım Deseni Nerelerde Kullanılır?   
 
 Örneğin bir alışveriş sitesinde bir ürüne indirim yapıldığında kullanıcılarınıza e-mail ile haber verilir iken bu kalıp kullanılabilir. Ya da en basitinden facebook da bir gruba üyesiniz grupta bildirimleri açtığınızda size (ve daha birçok kişiye) gelecek olan bildirim bu yapı ile olabilir.
+
 
 Faydaları Nedir?
 
@@ -206,51 +207,52 @@ public class WeatherStation {
     }
 }
 ```
-Test sınıfı. Dikkat edersek, observer sınıflarından nesne yaratılırken, parametre olarak somut Subject sınıfı kullanıldı.
+Test sınıfı.Observer sınıflarından nesne yaratılırken, parametre olarak somut Subject sınıfı kullanıldı.
 
 
-Genel olarak Behavioral (davranışsal) tasarım kalıplardan olan observer pattern sık kullanılır. One to many ilişkili birden fazla nesneden oluşur. Bir nesne değiştiği zaman, ona bağlı diğer nesnelerde otomatik olarak değişmektedir. Olay (event) bazlı değişimler olmaktadır.Gözlemci tasarım deseni gönderim tabanlı bildirim gerektiren tüm senaryolar için uygundur. Bu model, bir sağlayıcıyı ( Konu veya observableolarak da bilinir) ve sıfır, bir veya daha fazla gözlemcileri tanımlar. Gözlemcilerin sağlayıcıya kaydoldu ve önceden tanımlanmış bir koşul, olay veya durum değişikliği gerçekleştiğinde sağlayıcı, yöntemlerinden birini çağırarak tüm gözlemcilerin 'ı otomatik olarak bilgilendirir. Bu yöntem çağrısında sağlayıcı, güncel durum bilgilerini observers 'a de verebilir. 
+Genel olarak Behavioral (davranışsal) tasarım kalıplardan olan observer pattern sık kullanılır. Bire bir ilişkili birden fazla nesneden oluşur. Bir nesne değiştiği zaman, ona bağlı diğer nesnelerde otomatik olarak değişmektedir. Olay bazlı değişimler olmaktadır.Gözlemci tasarım deseni gönderim tabanlı bildirim gerektiren tüm senaryolar için uygundur. Bu model, bir sağlayıcıyı  ve sıfır, bir veya daha fazla gözlemcileri tanımlar. Gözlemcilerin sağlayıcıya kaydoldu ve önceden tanımlanmış bir koşul, olay veya durum değişikliği gerçekleştiğinde sağlayıcı, yöntemlerinden birini çağırarak tüm gözlemcilerin 'ı otomatik olarak bilgilendirir. Bu yöntem çağrısında sağlayıcı, güncel durum bilgilerini observers 'a de verebilir. 
 
 
- ##Iterator Tasarım Deseni
+ ## Dekorasyon Tasarım Deseni
+ Dekorasyon tasarım deseni, structural tasarım desenlerinden biridir. 
  
-Iterator (tekrarlayıcı) tasarım deseni, behavior grubununa ait, nesne koleksiyonlarının (list,array,queue) 
-elemanlarını belirlenen kurallara göre elde edilmesini düzenleyen tasarım desenidir. 
+ 
+ Dekorasyon Tasarım Deseni Nedir?
+ 
+Dekorasyon Tasarım Deseni nesnelere çalışma zamanında yeni özellikler, fonksiyonlar eklemede kullanılır. Dekore eden nesne ile dekore edilecek sınıf aynı base’den türer ve dekore eden sınıf dekore edilecek sınıfın kendisini de bir property olarak içerisinde barındırır. 
+ 
+ Dekorasyon  Tasarım Desenindeki Amaç:
+ Dekorasyon  tasarım deseninin amacı nesnelere dinamik olarak özellik eklemektir ve nesne kendisine eklenen özelliklerden habersiz  ve ayrı bir konumda olmalıdır. Yani kodun belli kısımlarında nesnelere belli özellikler kazandırmak istiyorsak ve bunu nesnenin kendi classından ayrıştırılmış bir şekilde yapmak istiyorsak dekaratör tasarım desenini kullanmalıyız.
 
 
-Iterator Tasarım Deseni Nedir?
+Faydaları Nedir?
 
-Iterator tasarım deseni dizilerin, listlerin, queue’ların elemanlarını dolaşmak için kullanılan tasarım desenidir. En önemli özelliği dizi, queue ya da list olması bilinmeden elemanları üzerinde işlem yapabilmesidir. 
-
-
-Iterator Tasarım Desenimdeki Amaç:
-Desenin amacı nesne bütününü baştan sonra dolaşabilmektir.
-Iterator tasarım deseni, bir listenin yapısının ve çalışma tarzının uygulamanın diğer kısımları ile olan 
-bağlantılarını en aza indirmek için; listede yer alan nesnelerin, sırasıyla uygulamadan soyutlanması amacıyla kullanılır.
+1. loosely-coupled uygulamalar yapmayı sağlar.
+2. Runtime zamanında(dinamik olarak) bir nesneye yeni özellikler eklenmesini sağlar.
+3. Özellikleri kalıtım yolu dışında composition ve delegation ile de alınabilmesini sağlar.
+4. open-closed prensibinin uygulandığı tasarım desenidir.
 
 
-Iterator Tasarım Deseni Nerelerde Kullanılır?
+Dekorasyon tasarım deseninin en önemli özellikleri
 
-Bir veri kümesini uygulamamızda diğer kısımlar ile olan bağlantısını en aza indirmek için;listede yer alan nesnelerin, 
-sırasıyla uygulamadan soyutlanması amacıyla kullanılır.
-Yani yapılacak olan işlemdeki nesneler ile olan tüm kontroller iterasyon deseninde gerçekleştirilir ve 
-veri kümesi üzerinde bu iterasyonun kuralları çerçevesinde bir döngü söz konusu olur.
-Sınıflar, bünyelerinde başka nesneleri barındırmak için değişik tipte listelere sahip olabilirler. 
-Bu sınıfların nasıl implemente edildiği gizlemek ve sahip oldukları listeler üzerinde işlem yapmayı kolaylaştırmak
-için Iterator tasarım şablonu kullanılır.
-
-Iterator Tasarım Deseni Yapıları
-
-Iterator tasarım deseninde 5 temel yapı bulunur.
--Iterator: Koleksiyon elemanları elde edilebilmesi için gerekli işlemleri tanımlar.
--Aggregate: Koleksiyon barındıran nesnelerin Iterator tipinden nesne olusturacağını belirten arayüzdür.
--Concrete Aggregate: Koleksiyon barındıran nesnedir. Aggregate arayüzünü uygular ve ilgili ConcreteIterator nesnesini oluşturur.
--ConcreteIterator: Aggregate yapısında ki koleksiyon elemanlarının elde edilmesini sağlayan metotları barındıran yani Iterator arayüzünü uygulayan gerçek iterator nesnesidir.
--Client: Bu yapıyı kullanarak koleksiyon içindeki elemanlara erişen yapıdır.
+Esas nesne dekore edildiğinin farkında değildir.  Yani dekoratör ile eklenen özellikler aslında kendi classı içerisinde barındırdığı özellikler değildir.
+Esas nesnenin classı tüm gerekli gereksiz opsiyonları içerisinde barındıran büyük bir class halinden çıkmış olur.
+Tüm decorator classları birbirinden bağımsızdır.
+Decorator classları kendi arasında combine edilip eşleştirilebilir.
 
 
-Kodlar
+Örnek Kullanım Alanları
 
+1. java.io.InputStream, OutputStream, Reader ve Writer sınıflarının tüm alt sınıflarında kullanılır.
+2. java.util.Collections sınıfı ve checkedXXX(), synchronizedXXX(), unmodifiableXXX() metodlarında kullanılır.
+3. javax.servlet.http.HttpServletRequestWrapper ve HttpServletResponseWrapper sınıflarında kullanılır.
+
+
+Decorator patternin ana oyuncuları
+
+Component class : Üzerine dinamik olarak özellik ve davranış eklenecek olan nesnenin classı.
+Decorator class : Dinamik olarak özelliğin ve davranışın eklendiği class.
+IComponent  : Component ve Decorator classın türediği interface.
 
 
 
