@@ -214,18 +214,18 @@ Sonuç
 Genel olarak Behavioral (davranışsal) tasarım kalıplardan olan observer pattern sık kullanılır. Bire bir ilişkili birden fazla nesneden oluşur. Bir nesne değiştiği zaman, ona bağlı diğer nesnelerde otomatik olarak değişmektedir. Olay bazlı değişimler olmaktadır.Gözlemci tasarım deseni gönderim tabanlı bildirim gerektiren tüm senaryolar için uygundur. Bu model, bir sağlayıcıyı  ve sıfır, bir veya daha fazla gözlemcileri tanımlar. Gözlemcilerin sağlayıcıya kaydoldu ve önceden tanımlanmış bir koşul, olay veya durum değişikliği gerçekleştiğinde sağlayıcı, yöntemlerinden birini çağırarak tüm gözlemcilerin 'ı otomatik olarak bilgilendirir. Bu yöntem çağrısında sağlayıcı, güncel durum bilgilerini observers 'a de verebilir. 
 
 
- ## Dekorasyon Tasarım Deseni
- Dekorasyon tasarım deseni, structural(yapısal) tasarım desenlerinden biridir. 
+ ## Decorator Tasarım Deseni
+ Decorator tasarım deseni, structural(yapısal) tasarım desenlerinden biridir. 
  
  
-Dekorasyon Tasarım Deseni Nedir?
+Decorator Tasarım Deseni Nedir?
  
-Dekorasyon Tasarım Deseni nesnelere çalışma zamanında yeni özellikler, fonksiyonlar eklemede kullanılır. Dekore eden nesne ile dekore edilecek sınıf aynı base’den türer ve dekore eden sınıf dekore edilecek sınıfın kendisini de bir property olarak içerisinde barındırır. 
+Decorator Tasarım Deseni nesnelere çalışma zamanında yeni özellikler, fonksiyonlar eklemede kullanılır. Dekore eden nesne ile dekore edilecek sınıf aynı base’den türer ve dekore eden sınıf dekore edilecek sınıfın kendisini de bir property olarak içerisinde barındırır. 
  
  
-Dekorasyon  Tasarım Desenindeki Amaç:
+Decorator Tasarım Desenindeki Amaç:
 
-Dekorasyon  tasarım deseninin amacı nesnelere dinamik olarak özellik eklemektir ve nesne kendisine eklenen özelliklerden habersiz  ve ayrı bir konumda olmalıdır. Yani kodun belli kısımlarında nesnelere belli özellikler kazandırmak istiyorsak ve bunu nesnenin kendi classından ayrıştırılmış bir şekilde yapmak istiyorsak dekaratör tasarım desenini kullanmalıyız.
+Decorator tasarım deseninin amacı nesnelere dinamik olarak özellik eklemektir ve nesne kendisine eklenen özelliklerden habersiz  ve ayrı bir konumda olmalıdır. Yani kodun belli kısımlarında nesnelere belli özellikler kazandırmak istiyorsak ve bunu nesnenin kendi classından ayrıştırılmış bir şekilde yapmak istiyorsak dekaratör tasarım desenini kullanmalıyız.
 
 
 Faydaları Nedir?
@@ -236,7 +236,7 @@ Faydaları Nedir?
 4. open-closed prensibinin uygulandığı tasarım desenidir.
 
 
-Dekorasyon Tasarım Deseninin Özellikleri
+Decorator Tasarım Deseninin Özellikleri
 
 Esas nesne dekore edildiğinin farkında değildir.  Yani dekoratör ile eklenen özellikler aslında kendi classı içerisinde barındırdığı özellikler değildir.
 Esas nesnenin classı tüm gerekli gereksiz opsiyonları içerisinde barındıran büyük bir class halinden çıkmış olur.
