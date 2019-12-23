@@ -217,12 +217,14 @@ Genel olarak Behavioral (davranışsal) tasarım kalıplardan olan observer patt
  Dekorasyon tasarım deseni, structural tasarım desenlerinden biridir. 
  
  
- Dekorasyon Tasarım Deseni Nedir?
+Dekorasyon Tasarım Deseni Nedir?
  
 Dekorasyon Tasarım Deseni nesnelere çalışma zamanında yeni özellikler, fonksiyonlar eklemede kullanılır. Dekore eden nesne ile dekore edilecek sınıf aynı base’den türer ve dekore eden sınıf dekore edilecek sınıfın kendisini de bir property olarak içerisinde barındırır. 
  
- Dekorasyon  Tasarım Desenindeki Amaç:
- Dekorasyon  tasarım deseninin amacı nesnelere dinamik olarak özellik eklemektir ve nesne kendisine eklenen özelliklerden habersiz  ve ayrı bir konumda olmalıdır. Yani kodun belli kısımlarında nesnelere belli özellikler kazandırmak istiyorsak ve bunu nesnenin kendi classından ayrıştırılmış bir şekilde yapmak istiyorsak dekaratör tasarım desenini kullanmalıyız.
+ 
+Dekorasyon  Tasarım Desenindeki Amaç:
+
+Dekorasyon  tasarım deseninin amacı nesnelere dinamik olarak özellik eklemektir ve nesne kendisine eklenen özelliklerden habersiz  ve ayrı bir konumda olmalıdır. Yani kodun belli kısımlarında nesnelere belli özellikler kazandırmak istiyorsak ve bunu nesnenin kendi classından ayrıştırılmış bir şekilde yapmak istiyorsak dekaratör tasarım desenini kullanmalıyız.
 
 
 Faydaları Nedir?
@@ -233,7 +235,7 @@ Faydaları Nedir?
 4. open-closed prensibinin uygulandığı tasarım desenidir.
 
 
-Dekorasyon tasarım deseninin en önemli özellikleri
+Dekorasyon Tasarım Deseninin Özellikleri
 
 Esas nesne dekore edildiğinin farkında değildir.  Yani dekoratör ile eklenen özellikler aslında kendi classı içerisinde barındırdığı özellikler değildir.
 Esas nesnenin classı tüm gerekli gereksiz opsiyonları içerisinde barındıran büyük bir class halinden çıkmış olur.
@@ -256,5 +258,100 @@ IComponent  : Component ve Decorator classın türediği interface.
 
 ![Imega of Class](https://github.com/betulgecer/yazilim-tasarimi-ve-mimarisi/blob/master/classdiagramdecorator1.png)
 
+
+Kodlar
+
+Dekore edilecek sınıf
+
+```java
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace DecoratorPattern
+{
+    public abstract class Pizza
+    {
+        public abstract decimal PizzaFiyati();
+    }
+java 
+    class SadePizza : Pizza
+    {
+        public override decimal PizzaFiyati()
+        {
+            return 20.00m;
+        }
+        public override string ToString()
+        {
+            return "Pizza";
+        }
+    }
+ ```
+ 
+ Kendisine gönderilen SadePizza nesnesini dekore ederek pizzayı mantarlı pizza haline getiririz.
+ 
+ ```java
+ class MantarliPizza : Decorator
+    {
+        public MantarliPizza(Pizza pz)
+            : base(pz)
+        {
+        }
+        public override decimal PizzaFiyati()
+        {
+            return base.PizzaFiyati() + 1.50m;
+        }
+        public override string ToString()
+        {
+            return "Mantarlı " + base.pizza.ToString();
+        }
+    }
+   ```
+   
+ Kendisine gönderilen SadePizza nesnesini dekore ederek pizzayı kıymalı pizza haline getiririz.
+ ```java
+ class KiymaliPizza : Decorator
+    {
+        public KiymaliPizza(Pizza pz)
+            : base(pz)
+        {
+        }
+        public override decimal PizzaFiyati()
+        {
+            return base.PizzaFiyati() + 2.00m;
+        }
+        public override string ToString()
+        {
+            return "Kıymalı " + base.pizza.ToString();
+        }
+    }
+```
+
+Kendisine gönderilen SadePizza nesnesini dekore ederek pizzayı kuş başı etli pizza haline getiririz.
+
+```java
+class KusBasiEtliPizza : Decorator
+    {
+        public KusBasiEtliPizza(Pizza pz)
+            : base(pz)
+        {
+        }
+        public override decimal PizzaFiyati()
+        {
+            return base.PizzaFiyati() + 3.50m;
+        }
+        public override string ToString()
+        {
+            return "Kuş Başı Etli " + base.pizza.ToString();
+        }
+    }
+}
+```
+
+Genel olarak bu desen, bir nesneye alt sınıflar yaratılmaksızın, dinamik olarak yeni özellikler kazandırmak için kullanılır.
+Decoractor tasarım deseni; yapıya yeni metot eklenmesini yapının arayüzünü uygulayan bir decorator nesnesi tanımlanarak yapar. İçinde uyguladığı arayüz tipinde bir referans barındırır ve kendisine verilen bu nesne üzerinde yeni eklenecek olan metotları barındırır. Kullanımı oldukça basittir. 
+Decorator tasarım desenini Decorator sınıfları ve Component sınıfları şeklinde iki kısma ayırabiliriz.
+Mevcut bir sınıf hiyerarşisini ya da sınıfın yapısını değiştirmeden, oluşturulan nesnelere yeni özelliklerin eklenme işlemini gerçekleştirmek için Decorator tasarım şablonu kullanılır.
 
 
