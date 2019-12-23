@@ -209,12 +209,13 @@ public class WeatherStation {
 ```
 Test sınıfı.Observer sınıflarından nesne yaratılırken, parametre olarak somut Subject sınıfı kullanıldı.
 
+Sonuç
 
 Genel olarak Behavioral (davranışsal) tasarım kalıplardan olan observer pattern sık kullanılır. Bire bir ilişkili birden fazla nesneden oluşur. Bir nesne değiştiği zaman, ona bağlı diğer nesnelerde otomatik olarak değişmektedir. Olay bazlı değişimler olmaktadır.Gözlemci tasarım deseni gönderim tabanlı bildirim gerektiren tüm senaryolar için uygundur. Bu model, bir sağlayıcıyı  ve sıfır, bir veya daha fazla gözlemcileri tanımlar. Gözlemcilerin sağlayıcıya kaydoldu ve önceden tanımlanmış bir koşul, olay veya durum değişikliği gerçekleştiğinde sağlayıcı, yöntemlerinden birini çağırarak tüm gözlemcilerin 'ı otomatik olarak bilgilendirir. Bu yöntem çağrısında sağlayıcı, güncel durum bilgilerini observers 'a de verebilir. 
 
 
  ## Dekorasyon Tasarım Deseni
- Dekorasyon tasarım deseni, structural tasarım desenlerinden biridir. 
+ Dekorasyon tasarım deseni, structural(yapısal) tasarım desenlerinden biridir. 
  
  
 Dekorasyon Tasarım Deseni Nedir?
